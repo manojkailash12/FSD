@@ -1,0 +1,14 @@
+{
+    "name":"sam",
+    "age":25,
+    "userData":[
+        {
+            "name":"Sathvik",
+            "city":"Karimnagr"
+        },
+        {
+            "name":"Devendra",
+            "city":"Kammam"
+        }
+    ]
+}
