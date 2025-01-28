@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>FORM</title>
     <style>
         #demo{
             color: red;
@@ -11,24 +11,25 @@
     </style>
 </head>
 <body>
-   <!-- <div id="mainBlock">
-    <div class="topBlock">
-        <img src="" alt="">
-    </div>
-    <div class="bottomBlock">
-        <h1>Header</h1>
-        <button>View More</button>
-    </div>
-   </div> -->
-
-
-   <form>
-    <input type="text" placeholder="name" id="uName"><br>
-    <input type="email" placeholder="email" id="uMail"><br>
-    <input type="password" placeholder="password" id="uPsw"><br>
-    <input type="submit">
-   </form>
-
+    <form>
+        <div class="formgroup">
+            <label for="uName">Username : </label>
+            <input type="text" id="uName" placeholder="enter username">
+        </div>
+        <div class="formgroup">
+            <label for="uPass">Password : </label>
+            <input type="password" id="uPass" placeholder="enter password">
+            <input type="checkbox" id="check">
+            <spam id="show">show password</spam>
+        </div>
+        <div class="formgroup">
+            <label for="">Gender : </label>
+            <input type="radio" name="gender" value="male"><span>Male</span>
+            <input type="radio" name="gender" value="female"><span>Female</span>
+            <input type="radio" name="gender" value="others"><span>Others</span>
+        </div>
+        <input type="submit">
+       </form>
     <script src="./dom1.js"></script>
 </body>
 </html>
