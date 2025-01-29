@@ -1,0 +1,39 @@
+*{
+    box-sizing: border-box;
+    margin: 0px;
+    padding: 0px;
+}
+body{
+    font-family: sans-serif;
+}
+
+#navBlock{
+    width: 100%;
+    height: 100vh;
+    background-image: url("./bgimg.png");
+}
+#navBlock > article{
+    width: 90%;
+    height: inherit;
+    margin: 0px auto;
+    display: flex;
+    flex-direction: column;
+}
+
+.topNavBlock{
+    flex-basis: 20%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: yellow;
+}
+.logo span{
+    font-size: 28px;
+    text-transform: uppercase;
+    color: rgb(62, 9, 9);
+    font-weight: 900;
+}
+.bottomNavBlock{
+    flex-basis: 80%;
+    background-color: violet;
+}

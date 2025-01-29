@@ -4,8 +4,94 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        *{
+            box-sizing: border-box;
+            margin: 0px;
+            padding: 0px;
+        }
+        body{
+            background-color: rgb(5, 5, 43);
+            color: white;
+            width: 100%;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .container{
+            width: 550px;
+            height: 400px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+          
+        }
+        #left , #right{
+            width: 250px;
+            height: 300px;
+            border: 2.5px dashed #fff;
+            margin: 5px;
+            padding: 10px;
+            
+        }
+        .items{
+            width: 100%;
+            height: 65px;
+            margin-bottom: 5px;
+            background-color: springgreen;
+            color: rgb(5, 5, 43);
+        }
+    </style>
 </head>
 <body>
     
+    <div class="container">
+        <div id="left">
+            <div class="items" draggable="true">Item1</div>
+            <div class="items" draggable="true">Item2</div>
+            <div class="items" draggable="true">Item3</div>
+            <div class="items" draggable="true">Item4</div>
+        </div>
+        <div id="right">
+
+        </div>
+    </div>
+
+
+    <!-- ! internal javascript -->
+    <script>
+        let items = document.querySelectorAll(".items");
+        let left = document.getElementById("left");
+        let right = document.getElementById("right");
+        // console.log(items);
+        [...items].map(element=>{
+            // console.log(element);
+            element.addEventListener("dragstart" , (event)=>{
+                // console.log(event.target);
+                let selected =event.target;
+
+                //! right container
+
+                right.addEventListener("dragover",event=>{
+                    event.preventDefault();
+                })
+                right.addEventListener("drop",()=>{
+                    // console.log(selected);
+                    right.appendChild(selected);
+                    selected=null;
+                });
+                  //! left container
+
+                  left.addEventListener("dragover",event=>{
+                    event.preventDefault();
+                })
+                left.addEventListener("drop",()=>{
+                    left.appendChild(selected);
+                    selected=null;
+                })
+            })
+        })
+    </script>
 </body>
 </html>
